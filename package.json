@@ -1,0 +1,15 @@
+{
+  "name": "Inventory",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pedrohguimaraes/inventory-control-api.git",
+  "author": "Pedro Guimarães <phgs1996@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.18.10",
+    "sequelize": "^5.1.0"
+  }
+}
