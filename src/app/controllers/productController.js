@@ -25,9 +25,9 @@ router.post('/store', async(req, res) => {
     try{
         const postData = req.body;
 
-        return res.status(400).send(retorno);
+        return res.status(200).send(retorno);
     }catch(err){
-        return res.status(201).send(err);
+        return res.status(400).send(err);
     }
 });
 
