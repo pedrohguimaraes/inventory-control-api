@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {Usuario} = require('../models');
-const authConfig = require('../../resources/auth/authConfig');
-const mailer = require('../../modules/mailer');
+const {User} = require('../models');
+
 
 // list
 router.post('/', async(req, res) => {
