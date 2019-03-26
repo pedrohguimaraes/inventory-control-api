@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataType) => {
 
     const Product = sequelize.define('Product', {
-      fabricator_id: DataType.INTEGER,
+      fabricator_id: DataType.INTEGER(),
       name: DataType.STRING(255),
       registration_date: DataType.DATE,
       description: DataType.TEXT,

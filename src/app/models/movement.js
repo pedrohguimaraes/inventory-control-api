@@ -5,7 +5,7 @@ module.exports = (sequelize, DataType) => {
       user_id: DataType.INTEGER,
       movement_type_id: DataType.INTEGER,
       address_origin_id: DataType.INTEGER,
-      address_destiny_id: DateType.INTEGER
+      address_destiny_id: DataType.INTEGER
     }, {
       timestamps: false,
       tableName: 'movement'

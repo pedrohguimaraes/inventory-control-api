@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const {User} = require('../models');
+const {Product} = require('../models');
 
 
 // list
@@ -10,6 +9,9 @@ router.post('/', async(req, res) => {
 
     try{
         const postData = req.body;
+
+        console.log(postData); return;
+
 
        return res.status(200).send(retorno);
     }catch(err){
@@ -30,4 +32,4 @@ router.post('/store', async(req, res) => {
     }
 });
 
-module.exports = app => app.use('/auth', router);  
+module.exports = app => app.use('/product', router);  
