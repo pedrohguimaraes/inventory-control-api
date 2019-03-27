@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const {Product} = require('../models');
+//const {Product} = require('../models');
 
 
 // list
