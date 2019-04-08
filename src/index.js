@@ -8,4 +8,6 @@ app.use(bodyParser.urlencoded({ extended:false }));
 
 require('./app/controllers/index')(app);
 
-app.listen(3000);
+app.listen(3000, function(){
+    console.log('running');
+});
