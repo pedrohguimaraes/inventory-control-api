@@ -1,21 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const Sequelize = require('sequelize');
 const {Product} = require('../models');
-
+const Op = Sequelize.Op;
 
 // list
 router.get('/', async(req, res) =>{
     try{
-
-
-        if(req.body.q != undefined){
-            var products = await Product.findAll();
+        const q = req.body.q;
+        const filter = [];
+        
+        if(q != undefined){
+            filter.push({
+                [Op.or]: 
+                    {
+                        name: {[Op.like]: '%'+q+'%'},
+                        description: {[Op.like]: '%'+q+'%'}
+                    }
+            });
         }
-        return res.status(200).send(products);
-        // ;
-        // return res.status(200).send(products[0]);
 
+        if(req.body.active){
+            filter.push({
+                [Op.and]:{
+                    active: req.body.active
+                }
+            });
+        }
+
+         //console.log(filter);
+        const products = await Product.findAll({where: filter});
+    
+        return res.status(200).send(products);
 
     }catch(err){
         
@@ -35,4 +52,4 @@ router.post('/store', async(req, res) => {
     }
 });
 
-module.exports = app => app.use('/product', router);  
+module.exports = app => app.use('/product', router);
