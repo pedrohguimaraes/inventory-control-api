@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataType) => {
 
-    const Product = sequelize.define('Product', {
+    const Vw_product = sequelize.define('Vw_product', {
       fabricator_id: DataType.INTEGER(),
       name: DataType.STRING(255),
       registration_date: DataType.DATE,
@@ -13,11 +13,14 @@ module.exports = (sequelize, DataType) => {
       net_weight: DataType.DOUBLE,
       minimum_stock: DataType.INTEGER,
       obs: DataType.STRING(255),
-      active: DataType.BOOLEAN
+      active: DataType.BOOLEAN,
+      fabricatorName: DataType.STRING(255),
+      identification: DataType.STRING(30),
+      contact: DataType.STRING(45)
     }, {
       timestamps: false,
-      tableName: 'product'
+      tableName: 'vw_product'
     });
-
-    return Product;
+    
+    return Vw_product;
 }
