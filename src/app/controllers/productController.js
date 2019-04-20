@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 const Sequelize = require('sequelize');
 const {Vw_product} = require('../models');
 const {Product} = require('../models');
