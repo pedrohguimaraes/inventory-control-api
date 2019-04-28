@@ -3,7 +3,7 @@ const path = require('path');
 
 /* Importa todos os controllers 
 *    .filter: nenhum que comece com ponto (.env por exemplo),
-*    e todos que não sejam o index na pasta
+*    e todos que não sejam o index
 */
 module.exports = app => {
     fs
